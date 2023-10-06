@@ -147,3 +147,6 @@ img {
   text-transform: capitalize;
   color: #007BFF;
 }
+.container .hidden {
+  display: none;
+}

@@ -1,16 +1,14 @@
 const search = document.querySelector("form");
-const card = document.querySelector('.information');
-const infoCard = document.querySelector('.info-card');
-
+const card = document.querySelector(".information");
+const infoCard = document.querySelector(".info-card");
 
 //manipulate the dom
-const updateUi = (data) =>{
+const updateUi = (data) => {
+  const cityData = data.cityData;
+  const weatherData = data.weather;
+  const temp = weatherData.Temperature.Metric.Value;
 
-    const cityData = data.cityData;
-    const weatherData = data.weather;
-    const temp = weatherData.Temperature.Metric.Value;
-
-    infoCard.innerHTML = `
+  infoCard.innerHTML = `
     <div class="icon">
             <!-- icon -->
           </div>
@@ -22,6 +20,9 @@ const updateUi = (data) =>{
           </div>
     `;
 
+  if (card.classList.contains('hidden')) {
+    card.classList.remove('hidden');
+  };
 };
 
 const updateCityUi = async (city) => {
@@ -30,8 +31,8 @@ const updateCityUi = async (city) => {
 
   return {
     cityData,
-    weather
-  }; 
+    weather,
+  };
 };
 
 search.addEventListener("submit", (e) => {

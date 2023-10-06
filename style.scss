@@ -84,6 +84,7 @@ img{
     display: flex;
     align-items: center;
     overflow: hidden;
+    
 
     @include responsive("mobile") {
       width: 80%;
@@ -155,5 +156,9 @@ img{
       }
 
     }
+  }
+
+  .hidden{
+    display: none;
   }
 }
