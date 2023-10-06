@@ -20,9 +20,9 @@ const updateUi = (data) => {
           </div>
     `;
 
-  if (card.classList.contains('hidden')) {
-    card.classList.remove('hidden');
-  };
+ //if (card.classList.contains('hidden')) {
+    //card.classList.remove('hidden');
+  //};
 };
 
 const updateCityUi = async (city) => {
