@@ -34,12 +34,9 @@ const updateUi = (data) => {
 
 
 
-  // if (card.style.display === "hidden") {
+  // if (card.style.display === "none") {
   //   card.style.display = "block";
   // }
-
-
-  
 
 
 
