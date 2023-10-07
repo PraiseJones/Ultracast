@@ -1,10 +1,12 @@
 const search = document.querySelector("form");
 const card = document.querySelector(".information");
 const infoCard = document.querySelector(".info-card");
+const timeImg = document.querySelector('.weather-disp');
 
 //manipulate the dom
 const updateUi = (data) => {
   const { cityData, weather } = data;
+  console.log(data);
 
   const temp = weather.Temperature.Metric.Value;
 
@@ -20,14 +22,26 @@ const updateUi = (data) => {
           </div>
   `;
 
-  if (card.style.display === "hidden") {
-    card.style.display = "block";
-  }
+  let timeSrc = null;
+
+  if (weather.IsDayTime) {
+    timeSrc = 'url(/Assets/day.jpg)';
+  } else {
+    timeSrc = 'url(/Assets/night.jpg)';
+  };
+
+  timeImg.style.backgroundImage = timeSrc;
 
 
-  let icon = null;
+
+  // if (card.style.display === "hidden") {
+  //   card.style.display = "block";
+  // }
+
 
   
+
+
 
 };
 
@@ -53,3 +67,6 @@ search.addEventListener("submit", (e) => {
     .then((data) => updateUi(data))
     .catch((err) => console.log(err));
 });
+
+
+// console.log(timeImg.style);
