@@ -95,7 +95,7 @@ img{
     display: flex;
     align-items: center;
     overflow: hidden;
-    // display: none;
+    display: none;
     
 
     @include responsive("mobile") {
@@ -163,7 +163,7 @@ img{
     }
   }
 
-  //.hidden{
-   // display: none;
-  //}
+  .show{
+   display: flex;
+  }
 }

@@ -12,8 +12,6 @@ const updateUi = (data) => {
   const temp = weather.Temperature.Metric.Value;
 
   let iconSrc = `/Assets/icons/${weather.WeatherIcon}.svg`;
-  // icon.setAttribute('src', iconSrc)
-  // console.log(weather.WeatherIcon, iconSrc, icon);
 
   infoCard.innerHTML = `
     <div class="icon">
@@ -39,9 +37,11 @@ const updateUi = (data) => {
 
   timeImg.style.backgroundImage = timeSrc;
 
-  // if (card.style.display === "none") {
-  //   card.style.display = "block";
-  // }
+  const computedStyle = window.getComputedStyle(card);
+
+  if (computedStyle.display === "none") {
+    card.classList.add("show");
+  }
 };
 
 const updateCityUi = async (city) => {
@@ -66,6 +66,5 @@ search.addEventListener("submit", (e) => {
     .then((data) => updateUi(data))
     .catch((err) => console.log(err));
 });
-
 
 // console.log(icon);
