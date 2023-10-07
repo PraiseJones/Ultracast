@@ -1,7 +1,8 @@
 const search = document.querySelector("form");
 const card = document.querySelector(".information");
 const infoCard = document.querySelector(".info-card");
-const timeImg = document.querySelector('.weather-disp');
+const timeImg = document.querySelector(".weather-disp");
+const icon = document.querySelector(".iconim");
 
 //manipulate the dom
 const updateUi = (data) => {
@@ -22,24 +23,25 @@ const updateUi = (data) => {
           </div>
   `;
 
+  // changes the image and icon to suit the time and weather condition
+
+  let iconSrc = `/Assets/icons/${weather.WeatherIcon}.svg`;
+  // icon.setAttribute('src', iconSrc);
+  console.log(weather.WeatherIcon, iconSrc, icon);
+
   let timeSrc = null;
 
   if (weather.IsDayTime) {
-    timeSrc = 'url(/Assets/day.jpg)';
+    timeSrc = "url(/Assets/day.jpg)";
   } else {
-    timeSrc = 'url(/Assets/night.jpg)';
-  };
+    timeSrc = "url(/Assets/night.jpg)";
+  }
 
   timeImg.style.backgroundImage = timeSrc;
-
-
 
   // if (card.style.display === "none") {
   //   card.style.display = "block";
   // }
-
-
-
 };
 
 const updateCityUi = async (city) => {
@@ -66,4 +68,4 @@ search.addEventListener("submit", (e) => {
 });
 
 
-// console.log(timeImg.style);
+// console.log(icon);
