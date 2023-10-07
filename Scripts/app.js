@@ -2,7 +2,7 @@ const search = document.querySelector("form");
 const card = document.querySelector(".information");
 const infoCard = document.querySelector(".info-card");
 const timeImg = document.querySelector(".weather-disp");
-const icon = document.querySelector(".iconim");
+const icon = document.querySelector(".icon");
 
 //manipulate the dom
 const updateUi = (data) => {
@@ -11,23 +11,23 @@ const updateUi = (data) => {
 
   const temp = weather.Temperature.Metric.Value;
 
+  let iconSrc = `/Assets/icons/${weather.WeatherIcon}.svg`;
+  // icon.setAttribute('src', iconSrc)
+  // console.log(weather.WeatherIcon, iconSrc, icon);
+
   infoCard.innerHTML = `
     <div class="icon">
-            <!-- icon -->
-          </div>
-          <h5>${cityData.EnglishName}</h5>
-          <div class="weather">${weather.WeatherText}</div>
-          <div class="degree">
-            <span>${temp}</span>
-            <span>&deg;C</span>
-          </div>
+      <img src=${iconSrc} alt="" class="iconim">
+    </div>
+    <h5>${cityData.EnglishName}</h5>
+    <div class="weather">${weather.WeatherText}</div>
+    <div class="degree">
+      <span>${temp}</span>
+      <span>&deg;C</span>
+    </div>
   `;
 
   // changes the image and icon to suit the time and weather condition
-
-  let iconSrc = `/Assets/icons/${weather.WeatherIcon}.svg`;
-  // icon.setAttribute('src', iconSrc);
-  console.log(weather.WeatherIcon, iconSrc, icon);
 
   let timeSrc = null;
 

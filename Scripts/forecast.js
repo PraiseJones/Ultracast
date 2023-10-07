@@ -1,4 +1,4 @@
-const key = "mVyuYb3fT88atL1qzNNIw7WsapqWV7MH";
+const key = "MvD10dOJroKYGyEaZdzNPpSGlS0St3xp";
 
 const getWeather = async (id) => {
   const base = "https://dataservice.accuweather.com/currentconditions/v1/";
