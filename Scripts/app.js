@@ -4,25 +4,31 @@ const infoCard = document.querySelector(".info-card");
 
 //manipulate the dom
 const updateUi = (data) => {
-  const cityData = data.cityData;
-  const weatherData = data.weather;
-  const temp = weatherData.Temperature.Metric.Value;
+  const { cityData, weather } = data;
+
+  const temp = weather.Temperature.Metric.Value;
 
   infoCard.innerHTML = `
     <div class="icon">
             <!-- icon -->
           </div>
           <h5>${cityData.EnglishName}</h5>
-          <div class="weather">${weatherData.WeatherText}</div>
+          <div class="weather">${weather.WeatherText}</div>
           <div class="degree">
             <span>${temp}</span>
             <span>&deg;C</span>
           </div>
-    `;
+  `;
 
- //if (card.classList.contains('hidden')) {
-    //card.classList.remove('hidden');
-  //};
+  if (card.style.display === "hidden") {
+    card.style.display = "block";
+  }
+
+
+  let icon = null;
+
+  
+
 };
 
 const updateCityUi = async (city) => {

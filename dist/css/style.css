@@ -63,10 +63,20 @@ img {
 }
 .container .searchbar form input {
   width: 100%;
-  background-color: transparent;
-  color: #cccccc;
-  border-bottom: 1px solid #007BFF;
+  height: 42px;
+  background-color: #fff;
+  color: #000000;
+  border: 3px solid #b4d8ff;
+  border-radius: 15px;
   padding: 8px 8px;
+  font-size: 1.2;
+  font-weight: 600;
+  transition-property: border;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.container .searchbar form input:focus {
+  border: 3px solid #007BFF;
 }
 .container .information {
   width: 50%;
@@ -110,7 +120,7 @@ img {
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   color: #fff;
 }
@@ -125,28 +135,15 @@ img {
   height: 70px;
   border-radius: 50px;
   background-color: rgba(233, 233, 233, 0.3);
-  margin-bottom: 40px;
 }
 .container .information .info-card h5 {
-  margin-bottom: 12px;
   font-size: 1.3rem;
   text-transform: capitalize;
   color: #cccccc;
-}
-.container .information .info-card .degree {
-  margin-top: 2rem;
-}
-@media screen and (max-width: 428px) {
-  .container .information .info-card .degree {
-    margin-top: 1.2rem;
-  }
 }
 .container .information .info-card .degree span {
   font-weight: 100;
   font-size: 3rem;
   text-transform: capitalize;
   color: #007BFF;
-}
-.container .hidden {
-  display: none;
 }
