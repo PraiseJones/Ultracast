@@ -7,7 +7,7 @@ const icon = document.querySelector(".icon");
 //manipulate the dom
 const updateUi = (data) => {
   const { cityData, weather } = data;
-  console.log(data);
+  // console.log(data);
 
   const temp = weather.Temperature.Metric.Value;
 
@@ -27,13 +27,7 @@ const updateUi = (data) => {
 
   // changes the image and icon to suit the time and weather condition
 
-  let timeSrc = null;
-
-  if (weather.IsDayTime) {
-    timeSrc = "url(/Assets/day.jpg)";
-  } else {
-    timeSrc = "url(/Assets/night.jpg)";
-  }
+  let timeSrc = weather.IsDayTime ? "url(/Assets/day.jpg)" : "url(/Assets/night.jpg)";
 
   timeImg.style.backgroundImage = timeSrc;
 
