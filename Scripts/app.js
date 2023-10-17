@@ -3,6 +3,7 @@ const card = document.querySelector(".information");
 const infoCard = document.querySelector(".info-card");
 const timeImg = document.querySelector(".weather-disp");
 const icon = document.querySelector(".icon");
+const searchIcon = document.querySelector("i");
 
 //manipulate the dom
 const updateUi = (data) => {
@@ -59,6 +60,28 @@ search.addEventListener("submit", (e) => {
   updateCityUi(city)
     .then((data) => updateUi(data))
     .catch((err) => console.log(err));
+
+    //set local storage
+    localStorage.setItem('city', city)
 });
 
-// console.log(icon);
+if (localStorage.getItem('city')) {
+  updateCityUi(localStorage.getItem('city'))
+    .then((data) => updateUi(data))
+    .catch((err) => console.log(err));
+}
+
+//Input the search function on the search icon
+
+searchIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  //get the value of the city
+  const city = search.city.value.trim();
+  search.reset();
+
+  //Inserts the city in the ui
+  updateCityUi(city)
+    .then((data) => updateUi(data))
+    .catch((err) => console.log(err));
+});
